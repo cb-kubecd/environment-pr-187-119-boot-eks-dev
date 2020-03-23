@@ -1,0 +1,158 @@
+
+Showing logs for build [32mcb-kubecd-environment-pr-187-11-m2dbn-3[0m stage [32mrelease[0m and container [32mstep-credential-initializer-phlpd[0m
+{"level":"warn","ts":1584971183.8911512,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1584971183.8915224,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mcb-kubecd-environment-pr-187-11-m2dbn-3[0m stage [32mrelease[0m and container [32mstep-working-dir-initializer-9mmm9[0m
+{"level":"warn","ts":1584971185.1598163,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1584971185.160546,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mcb-kubecd-environment-pr-187-11-m2dbn-3[0m stage [32mrelease[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mcb-kubecd-environment-pr-187-11-m2dbn-3[0m stage [32mrelease[0m and container [32mstep-git-source-cb-kubecd-environment-pr-187-11-m2dbn-bqncq[0m
+{"level":"warn","ts":1584971192.2526615,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1584971192.4393542,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/cb-kubecd/environment-pr-187-119-boot-eks-dev.git @ v0.0.3 in path /workspace/source"}
+
+Showing logs for build [32mcb-kubecd-environment-pr-187-11-m2dbn-3[0m stage [32mrelease[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:7179da074a1971a8501d62a5e49e16c742ce6abe
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mcb-kubecd-environment-pr-187-11-m2dbn-3[0m stage [32mrelease[0m and container [32mstep-validate-git[0m
+Git configured for user: jenkins-x-bot and email jenkins-x@googlegroups.com
+
+Showing logs for build [32mcb-kubecd-environment-pr-187-11-m2dbn-3[0m stage [32mrelease[0m and container [32mstep-verify-preinstall[0m
+WARNING: Vault is enabled and TLS is not enabled. This means your secrets will be sent to and from your cluster in the clear. See https://jenkins-x.io/docs/getting-started/setup/boot/#ingress for more information
+WARNING: TLS is not enabled so your webhooks will be called using HTTP. This means your webhook secret will be sent to your cluster in the clear. See https://jenkins-x.io/docs/getting-started/setup/boot/#ingress for more information
+Verifying the kubernetes cluster before we try to boot Jenkins X in namespace: **
+Trying to lazily create any missing resources to get the current cluster ready to boot Jenkins X
+Verifying Ingress...
+
+Using namespace '**' from context named '' on server ''.
+
+Verifying the CLI packages using version stream URL: https://github.com/cloudbees/cloudbees-jenkins-x-versions.git and git ref: 1b36c69976a0decfee03f96a895af5401454eb33
+using version 2.0.1249 of **
+CLI packages kubectl, git, helm seem to be setup correctly
+NAME               VERSION
+**                 2.0.1249
+Kubernetes cluster v1.14.9-eks-502bfb
+kubectl            v1.16.0
+helm client        2.14.3
+git                2.21.1
+
+Verifying Storage...
+WARNING: No URL provided for storage: logs
+WARNING: No URL provided for storage: reports
+WARNING: No URL provided for storage: repository
+WARNING: Your requirements have not enabled cloud storage for backup - we recommend enabling this for kubernetes provider eks
+Storage configuration looks good
+
+Helm installed and configured
+Ensuring Helm chart repository https://storage.googleapis.com/chartmuseum.jenkins-x.io is configured
+Running in cluster, not recreating permissions
+Cluster looks good, you are ready to '** boot' now!
+
+
+Showing logs for build [32mcb-kubecd-environment-pr-187-11-m2dbn-3[0m stage [32mrelease[0m and container [32mstep-install-jx-crds[0m
+Jenkins X CRDs upgraded with success
+
+Showing logs for build [32mcb-kubecd-environment-pr-187-11-m2dbn-3[0m stage [32mrelease[0m and container [32mstep-install-velero[0m
+Modified file /workspace/source/systems/velero/Chart.yaml to set the chart to version 3
+Verifying the helm requirements versions in dir: . using version stream URL: https://github.com/cloudbees/cloudbees-jenkins-x-versions.git and git ref: 1b36c69976a0decfee03f96a895af5401454eb33
+
+Showing logs for build [32mcb-kubecd-environment-pr-187-11-m2dbn-3[0m stage [32mrelease[0m and container [32mstep-install-velero-backups[0m
+Modified file /workspace/source/systems/velero-backups/Chart.yaml to set the chart to version 3
+Ignoring templates/default-backup.yaml
+No requirements file: /tmp/**-helm-apply-490579186/velero-backups/requirements.yaml so not checking for missing versions
+
+Showing logs for build [32mcb-kubecd-environment-pr-187-11-m2dbn-3[0m stage [32mrelease[0m and container [32mstep-install-nginx-controller[0m
+Modified file /workspace/source/systems/**ing/Chart.yaml to set the chart to version 3
+Verifying the helm requirements versions in dir: . using version stream URL: https://github.com/cloudbees/cloudbees-jenkins-x-versions.git and git ref: 1b36c69976a0decfee03f96a895af5401454eb33
+
+
+Showing logs for build [32mcb-kubecd-environment-pr-187-11-m2dbn-3[0m stage [32mrelease[0m and container [32mstep-create-install-values[0m
+
+Showing logs for build [32mcb-kubecd-environment-pr-187-11-m2dbn-3[0m stage [32mrelease[0m and container [32mstep-install-external-dns[0m
+Modified file /workspace/source/systems/external-dns/Chart.yaml to set the chart to version 3
+Verifying the helm requirements versions in dir: . using version stream URL: https://github.com/cloudbees/cloudbees-jenkins-x-versions.git and git ref: 1b36c69976a0decfee03f96a895af5401454eb33
+Adding missing Helm repo: charts.bitnami.com https://charts.bitnami.com/bitnami
+WARNING: No secrets found on "helm/repos" due: reading the secret "helm/repos" from vault: no secret "helm/repos" not found in vault
+Read credentials for https://charts.bitnami.com/bitnami from vault helm/repos
+Successfully added Helm repository charts.bitnami.com.
+
+Showing logs for build [32mcb-kubecd-environment-pr-187-11-m2dbn-3[0m stage [32mrelease[0m and container [32mstep-install-cert-manager-crds[0m
+customresourcedefinition.apiextensions.k8s.io/challenges.acme.cert-manager.io configured
+customresourcedefinition.apiextensions.k8s.io/orders.acme.cert-manager.io configured
+customresourcedefinition.apiextensions.k8s.io/certificaterequests.cert-manager.io configured
+customresourcedefinition.apiextensions.k8s.io/certificates.cert-manager.io configured
+customresourcedefinition.apiextensions.k8s.io/clusterissuers.cert-manager.io configured
+customresourcedefinition.apiextensions.k8s.io/issuers.cert-manager.io configured
+
+Showing logs for build [32mcb-kubecd-environment-pr-187-11-m2dbn-3[0m stage [32mrelease[0m and container [32mstep-install-cert-manager[0m
+Modified file /workspace/source/systems/cm/Chart.yaml to set the chart to version 3
+Verifying the helm requirements versions in dir: . using version stream URL: https://github.com/cloudbees/cloudbees-jenkins-x-versions.git and git ref: 1b36c69976a0decfee03f96a895af5401454eb33
+Adding missing Helm repo: charts.jetstack.io https://charts.jetstack.io
+WARNING: No secrets found on "helm/repos" due: reading the secret "helm/repos" from vault: no secret "helm/repos" not found in vault
+Read credentials for https://charts.jetstack.io from vault helm/repos
+Successfully added Helm repository charts.jetstack.io.
+
+Showing logs for build [32mcb-kubecd-environment-pr-187-11-m2dbn-3[0m stage [32mrelease[0m and container [32mstep-install-acme-issuer-and-certificate[0m
+Modified file /workspace/source/systems/acme/Chart.yaml to set the chart to version 3
+Ignoring templates/cert-manager-prod-certificate.yaml
+Ignoring templates/cert-manager-prod-issuer.yaml
+Ignoring templates/cert-manager-staging-certificate.yaml
+Ignoring templates/cert-manager-staging-issuer.yaml
+No requirements file: /tmp/**-helm-apply-992308614/acme/requirements.yaml so not checking for missing versions
+
+Showing logs for build [32mcb-kubecd-environment-pr-187-11-m2dbn-3[0m stage [32mrelease[0m and container [32mstep-install-vault[0m
+Installing vault-operator operator with helm values: [image.repository=banzaicloud/vault-operator image.tag=0.4.16]
+
+Vault operator installed in namespace **
+Applying vault ingress in namespace ** for vault name **-vault-pr-187-119-bo
+ingress.extensions/**-vault-pr-187-119-bo unchanged
+Region not specified for DynamoDB, defaulting to us-east-1
+Region not specified for KMS, defaulting to us-east-1
+Region not specified for S3, defaulting to us-east-1
+WARNING: Upgrading Vault CRD from within the pipeline. No changes to the cloud provider specific configuration will occur.
+Vault '**-vault-pr-187-119-bo' in namespace '**' updated 
+
+Showing logs for build [32mcb-kubecd-environment-pr-187-11-m2dbn-3[0m stage [32mrelease[0m and container [32mstep-create-helm-values[0m
+defaulting to secret storage scheme vault found from requirements file at /workspace/source/**-requirements.yml
+defaulting to secret base path to the cluster name pr-187-119-boot-eks found from requirements file at /workspace/source/**-requirements.yml
+generated schema file /workspace/source/env/parameters.schema.json from template /workspace/source/env/parameters.tmpl.schema.json
+Jenkins X Admin Username ***** [Automatically accepted existing value]
+Jenkins X Admin Password *** [Automatically accepted existing value]
+Pipeline bot Git username c**d-bot-test [Automatically accepted existing value]
+Pipeline bot Git email address jenkins-x@googlegroups.com [Automatically accepted existing value]
+Pipeline bot Git token *** [Automatically accepted existing value]
+HMAC token, used to validate incoming webhooks. Press enter to use the generated token *** [Automatically accepted existing value]
+Do you want to configure an external Docker Registry? false [Automatically accepted existing value]
+
+Showing logs for build [32mcb-kubecd-environment-pr-187-11-m2dbn-3[0m stage [32mrelease[0m and container [32mstep-create-jx-auth-config[0m
+Saved the rendered configuration into templates/**-auth-configmap.yaml file
+
+Showing logs for build [32mcb-kubecd-environment-pr-187-11-m2dbn-3[0m stage [32mrelease[0m and container [32mstep-install-jx-auth-config[0m
+Modified file /workspace/source/systems/**-auth/Chart.yaml to set the chart to version 3
+Ignoring templates/**-auth-configmap.yaml
+No requirements file: /tmp/**-helm-apply-203561987/**-auth/requirements.yaml so not checking for missing versions
+
+
+Showing logs for build [32mcb-kubecd-environment-pr-187-11-m2dbn-3[0m stage [32mrelease[0m and container [32mstep-install-jenkins-x[0m
+Modified file /workspace/source/env/Chart.yaml to set the chart to version 3
+Ignoring templates/.gitignore
+Applying the kubernetes overrides at ../kubeProviders/eks/values.tmpl.yaml
+Verifying the helm requirements versions in dir: . using version stream URL: https://github.com/cloudbees/cloudbees-jenkins-x-versions.git and git ref: 1b36c69976a0decfee03f96a895af5401454eb33
+Adding missing Helm repo: chartmuseum.jenkins-x.io http://chartmuseum.jenkins-x.io
+WARNING: No secrets found on "helm/repos" due: reading the secret "helm/repos" from vault: no secret "helm/repos" not found in vault
+Read credentials for http://chartmuseum.jenkins-x.io from vault helm/repos
+Successfully added Helm repository chartmuseum.jenkins-x.io.
+
+
+Showing logs for build [32mcb-kubecd-environment-pr-187-11-m2dbn-3[0m stage [32mrelease[0m and container [32mstep-verify-jenkins-x-environment[0m
+Storing the requirements in team settings in the dev environment
+Validating git repository for dev environment at URL https://github.com/cb-kubecd/environment-pr-187-119-boot-eks-dev.git
+Validating git repository for production environment at URL https://github.com/cb-kubecd/environment-pr-187-119-boot-eks-production.git
+Waiting for KV secrets engine to be ready for write...
+Waiting for KV secrets engine to be ready for write...
+error: no auth server found for git server https://github.com from gitURL https://github.com/cb-kubecd/environment-pr-187-119-boot-eks-production.git
+[31m
+Pipeline failed on stage 'release' : container 'step-verify-jenkins-x-environment'. The execution of the pipeline has stopped.[0m
